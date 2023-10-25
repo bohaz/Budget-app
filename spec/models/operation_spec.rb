@@ -32,7 +32,7 @@ RSpec.describe Operation, type: :model do
 
     it 'can be associated with a group' do
       group = create(:group)
-      operation = build(:operation, group: group)
+      operation = build(:operation, group:)
       expect(operation.group).to eq(group)
     end
   end

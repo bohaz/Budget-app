@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Group's index page", type: :feature do
   let(:user) { create(:user) }
-  let!(:group1) { create(:group, user: user) }
-  let!(:group2) { create(:group, user: user) }
+  let!(:group1) { create(:group, user:) }
+  let!(:group2) { create(:group, user:) }
   let!(:operation1) { create(:operation, author: user, group: group1, amount: 100) }
   let!(:operation2) { create(:operation, author: user, group: group2, amount: 200) }
 
@@ -11,7 +11,7 @@ RSpec.feature "Group's index page", type: :feature do
     sign_in user
     visit groups_path
   end
-  
+
   scenario 'displays the welcome message with user name' do
     expect(page).to have_content("Welcome, #{user.name}!")
   end

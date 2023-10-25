@@ -22,9 +22,9 @@ RSpec.describe Group, type: :model do
   end
 
   it 'can have many operations' do
-    operation1 = FactoryBot.create(:operation, group: group) 
-    operation2 = FactoryBot.create(:operation, group: group)
-    
+    operation1 = FactoryBot.create(:operation, group:)
+    operation2 = FactoryBot.create(:operation, group:)
+
     expect(group.operations).to include(operation1, operation2)
   end
 end

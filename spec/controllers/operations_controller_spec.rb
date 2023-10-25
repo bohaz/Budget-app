@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe OperationsController, type: :controller do
   let(:user) { create(:user) }
-  let(:group) { create(:group, user: user) }
-  let(:operation) { create(:operation, author: user, group: group) }
+  let(:group) { create(:group, user:) }
+  let(:operation) { create(:operation, author: user, group:) }
   let(:valid_attributes) { attributes_for(:operation).merge(author_id: user.id) }
-  let(:invalid_attributes) { { name: "", amount: nil } }
+  let(:invalid_attributes) { { name: '', amount: nil } }
 
   before do
     sign_in user
@@ -40,9 +40,9 @@ RSpec.describe OperationsController, type: :controller do
   describe 'POST #create' do
     context 'with valid params' do
       it 'creates a new Operation for the specified group and current user as the author' do
-        expect {
+        expect do
           post :create, params: { group_id: group.id, operation: valid_attributes }
-        }.to change(Operation, :count).by(1)
+        end.to change(Operation, :count).by(1)
       end
 
       it 'redirects to the operations index for the group' do
@@ -53,9 +53,9 @@ RSpec.describe OperationsController, type: :controller do
 
     context 'with invalid params' do
       it 'does not create a new Operation' do
-        expect {
+        expect do
           post :create, params: { group_id: group.id, operation: invalid_attributes }
-        }.not_to change(Operation, :count)
+        end.not_to change(Operation, :count)
       end
 
       it 'renders the :new template' do
@@ -64,5 +64,4 @@ RSpec.describe OperationsController, type: :controller do
       end
     end
   end
-
 end
