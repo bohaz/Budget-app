@@ -1,17 +1,17 @@
 <div class="login-container">
   <header>
-  <%= link_to root_path do %>
-    <%= image_tag '', alt: 'Flecha' %> Back
-  <% end %>
+    <%= link_to root_path do %>
+      <%= fa_icon "arrow-left" %> 
+    <% end %>
     <h2>LOGIN</h2>
-    <a href="#">Log In</a>
+    <button type="submit" form="login_form" class="header-submit">Log In</button> <!-- Esto es el botón que enviará el formulario -->
   </header>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: "login_form" }) do |f| %> <!-- Añade un id al formulario -->
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
-    <%= f.submit "Log in" %>
   <% end %>
+  
   <div class="forgot-password">
     <%= link_to "Forgot password?", new_password_path(resource_name) %>
   </div>
