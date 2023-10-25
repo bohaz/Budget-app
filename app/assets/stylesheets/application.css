@@ -1,4 +1,4 @@
-/* 
+/*
 *= require_self
 *= require_tree .
 *= require font-awesome
@@ -8,7 +8,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif; 
+  font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
 }
 
@@ -19,7 +19,9 @@ h1 {
 }
 
 /* Contenedor general */
-.container, .login-container, .registration-container {
+.container,
+.login-container,
+.registration-container {
   max-width: 400px;
   margin: 0 auto;
 }
@@ -40,7 +42,22 @@ h1 {
   width: 80%;
 }
 
-.btn, .header-submit, header a:last-of-type {
+header h2,
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+.forgot-password a,
+.group-link {
+  color: gray;
+  text-decoration: none;
+}
+
+.btn,
+.header-submit,
+header a:last-of-type {
   display: flex;
   background: none;
   border: none;
@@ -62,7 +79,29 @@ h1 {
   color: #fff;
 }
 
-.btn:hover, .header-submit:hover, header a:last-of-type:hover {
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+.header-submit {
+  padding: 0.5em;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  font-size: 1em;
+  height: 30px;
+}
+
+.header-submit {
+  font-size: 1em;
+  transition: text-decoration 0.3s ease;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.btn:hover,
+.header-submit:hover,
+header a:last-of-type:hover {
   background-color: transparent;
   border: 2px solid #3778c2;
   color: #3778c2;
@@ -79,12 +118,6 @@ header {
   margin-bottom: 2em;
 }
 
-header h2, header a {
-  color: white;
-  text-decoration: none;
-  margin: 0;
-}
-
 header h2 {
   font-size: 1.4em;
 }
@@ -96,31 +129,9 @@ form {
   gap: 5px;
 }
 
-form input[type="text"], form input[type="email"], form input[type="password"], .header-submit {
-  padding: 0.5em;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
-  font-size: 1em;
-  height: 30px;
-}
-
-.header-submit {
-  font-size: 1em; 
-  transition: text-decoration 0.3s ease;
-}
-
 .forgot-password {
   margin-top: 1em;
   text-align: center;
-}
-
-.forgot-password a, .group-link {
-  color: gray;
-  text-decoration: none;
-}
-
-.forgot-password a:hover {
-  text-decoration: underline;
 }
 
 /* Avatar */
@@ -197,4 +208,3 @@ form input[type="text"], form input[type="email"], form input[type="password"], 
 .link-category:hover {
   background-color: #4da320;
 }
-
