@@ -5,16 +5,15 @@
         <%= fa_icon "arrow-left" %> 
       <% end %>
       <h2>REGISTER</h2>
-      <%= f.submit "Next", class: "header-submit" %>
+      <%= f.submit "Next", class: "header-next" %>
     </header>
 
     <div class="user-avatar">
-      <%= f.file_field :avatar, class: 'avatar-upload' %>
+      <%= f.file_field :avatar, class: 'avatar-upload', id: 'avatar' %>
       <div class="avatar-preview">
-        <%= image_tag "", class: "avatar-image" %>
+        <%= fa_icon "user", class: "avatar-icon" %> 
       </div>
       <label for="avatar" class="avatar-label">Upload picture</label>
-      
     </div>
     
     <%= f.text_field :name, placeholder: "Full name", autofocus: true %>
