@@ -1,15 +1,272 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+*= require_self
+*= require_tree .
+*= require font-awesome
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: proxima-nova, sans-serif;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 20% 0;
+  color: #434b54;
+  font-family: 'Lobster', sans-serif;
+}
+
+/* containers */
+.container,
+.login-container,
+.registration-container,
+.group-container,
+.category-container,
+.operation-container,
+.new-transactio-container,
+.forgot-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 80%;
+}
+
+header h2,
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+.forgot-password a,
+.group-link {
+  color: #434b54;
+  text-decoration: none;
+}
+
+.login-btn,
+.header-login,
+.header-next,
+header a:last-of-type {
+  display: flex;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: lighter;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.header-login,
+.header-next {
+  font-size: 1em;
+  transition: text-decoration 0.3s ease;
+}
+
+.login-btn {
+  background-color: #3778c2;
+  text-align: center;
+  padding: 0.3em 1.5em;
+  border-radius: 5px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 0.5em;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  font-size: 1em;
+  height: 30px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.signup-btn:hover,
+.login-btn:hover {
+  background-color: transparent;
+  color: #3778c2;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3778c2;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+header h2 {
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.forgot-password {
+  margin-top: 1em;
+  text-align: center;
+}
+
+/* Avatar */
+.user-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+
+.avatar-upload {
+  display: none;
+}
+
+.avatar-icon {
+  margin-left: 1em;
+  color: #434b54;
+}
+
+.avatar-label {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: #434b54;
+}
+
+.avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+}
+
+/* Grupo */
+.group-item {
+  background-color: white;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.group-item i {
+  font-size: 2em;
+  margin-right: 1em;
+}
+
+.group-item p {
+  margin: 0;
+  color: #434b54;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-left: auto;
+}
+
+/* Botón SCAN */
+.link-new-category {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  background-color: #5fb523;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+}
+
+.link-new-category::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid white;
+  border-radius: 3px;
+}
+
+.add-category {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.total-amount {
+  color: #434b54;
+  background-color: white;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Esto hará que el texto y el monto se separen */
+}
+
+.total-group-amount,
+.operation-item {
+  color: #434b54;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: white;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  color: #434b54;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 95%;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}

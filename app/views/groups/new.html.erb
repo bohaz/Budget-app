@@ -1,0 +1,47 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<div class="category-container">
+<header>
+<%= link_to groups_path do %>
+  <%= fa_icon "arrow-left" %> 
+<% end %>
+<h2 class="category-title">Add a new category</h2>
+</header>
+
+<%= form_for(@group) do |f| %>
+  <div class="form-group">
+  <div class="form-group">
+  <%= f.text_field :name, placeholder: "Category Name", required: true, class: 'form-control' %>
+</div>
+
+  <div class="form-group">
+    <%= f.label :icon, "Choose an Icon" %>
+    <%= f.select :icon, options_for_select([
+      ['Car', 'fas fa-car'],
+      ['Bicycle', 'fas fa-bicycle'],
+      ['Bus', 'fas fa-bus'],
+      ['Train', 'fas fa-train'],
+      ['Plane', 'fas fa-plane'],
+      ['Ship', 'fas fa-ship'],
+      ['Motorcycle', 'fas fa-motorcycle'],
+      ['Taxi', 'fas fa-taxi'],
+      ['Truck', 'fas fa-truck'],
+      ['Subway', 'fas fa-subway'],
+      ['Tram', 'fas fa-tram'],
+      ['Walking', 'fas fa-walking'],
+      ['Horse', 'fas fa-horse'],
+      ['Horse Head', 'fas fa-horse-head'],
+      ['Golf Ball', 'fas fa-golf-ball'],
+      ['Golf Cart', 'fas fa-golf-cart'],
+      ['Baseball Ball', 'fas fa-baseball-ball'],
+      ['Baseball Bat', 'fas fa-baseball-bat'],
+    ]), {}, class: 'form-control' %>
+  </div>
+
+  <button type="submit" class="add-category link-new-category">ADD CATEGORY</button>
+
+<% end %>
+
+</div>
+

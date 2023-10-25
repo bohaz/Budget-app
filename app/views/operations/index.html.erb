@@ -1,0 +1,22 @@
+<div class="operation-container">
+  <header>
+    <%= link_to groups_path do %>
+      <%= fa_icon "arrow-left" %> 
+    <% end %>
+    <h2>Operations for <%= @group.name %></h2>
+   </header> 
+
+  <div class="total-group-amount">
+    <span>Total Amount for <%= @group.name %> :</span>
+    <span>$<%= @operations.sum(&:amount) %></span>
+  </div>
+
+  <% @operations.order(created_at: :desc).each do |operation| %>
+    <div class="operation-item">
+      <span>Amount:</span>
+      <span>$<%= operation.amount %></span>
+    </div>
+  <% end %>
+
+  <%= link_to 'ADD A NEW TRANSACTION', new_group_operation_path(@group), class: 'link-new-category' %>
+</div>
