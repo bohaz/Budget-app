@@ -1,19 +1,15 @@
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<div class="login-container">
+<div class="new-transactio-container">
 <header>
 <%= link_to group_operations_path(@group) do %>
   <%= fa_icon "arrow-left" %> 
 <% end %>
-<h1>Add a New Transaction</h1>
+<h2>Add a New Transaction</h2>
 </header>
 
 <%= form_for([@group, @operation]) do |f| %>
 
   <div class="form-group">
-    <%= f.label :name, "Transaction Name" %>
-    <%= f.text_field :name, required: true, class: 'form-control' %>
+    <%= f.text_field :name, placeholder: "Transaction Name", required: true, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -21,7 +17,7 @@
     <%= f.number_field :amount, required: true, step: "0.01", class: 'form-control' %>
   </div>
 
-  <%= f.submit "Save", class: 'btn btn-primary' %>
+  <button type="submit" class="add-category link-new-category">SAVE</button>
 
 <% end %>
 
