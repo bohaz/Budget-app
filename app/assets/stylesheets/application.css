@@ -21,7 +21,12 @@ h1 {
 /* containers */
 .container,
 .login-container,
-.registration-container, .group-container, .category-container, .operation-container, .new-transactio-container, .forgot-container {
+.registration-container,
+.group-container,
+.category-container,
+.operation-container,
+.new-transactio-container,
+.forgot-container {
   max-width: 400px;
   margin: 0 auto;
 }
@@ -56,7 +61,8 @@ header a {
 }
 
 .login-btn,
-.header-login, .header-next,
+.header-login,
+.header-next,
 header a:last-of-type {
   display: flex;
   background: none;
@@ -68,7 +74,8 @@ header a:last-of-type {
   text-decoration: none;
 }
 
-.header-login, .header-next {
+.header-login,
+.header-next {
   font-size: 1em;
   transition: text-decoration 0.3s ease;
 }
@@ -98,7 +105,8 @@ form input[type="password"] {
   text-decoration: underline;
 }
 
-.signup-btn:hover, .login-btn:hover {
+.signup-btn:hover,
+.login-btn:hover {
   background-color: transparent;
   color: #3778c2;
 }
@@ -212,15 +220,15 @@ form {
   left: 8px;
   right: 8px;
   bottom: 8px;
-  border: 2px solid white; 
-  border-radius: 3px; 
+  border: 2px solid white;
+  border-radius: 3px;
 }
 
 .add-category {
-  width: 100%; 
-  border: none; 
-  cursor: pointer; 
-  font-size: 1em; 
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .total-amount {
@@ -235,7 +243,8 @@ form {
   justify-content: space-between; /* Esto hará que el texto y el monto se separen */
 }
 
-.total-group-amount, .operation-item {
+.total-group-amount,
+.operation-item {
   color: #434b54;
   display: flex;
   justify-content: space-between;
@@ -257,6 +266,7 @@ form {
   font-size: 1em;
   width: 95%;
 }
+
 .form-group {
   margin-bottom: 1em;
 }
