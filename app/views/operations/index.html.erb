@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<div class="login-container">
+<header>
+<%= link_to groups_path do %>
+  <%= fa_icon "arrow-left" %> 
+<% end %>
+<h1>Operations for <%= @group.name %></h1>
+</header>
+
+<p>Total Amount for <%= @group.name %>: <%= @operations.sum(&:amount) %></p>
+
+<% @operations.order(created_at: :desc).each do |operation| %>
+  <div class="operation-item">
+    <p>Amount: <%= operation.amount %></p>
+  </div>
+<% end %>
+
+<%= link_to 'Add a new transaction', new_group_operation_path(@group) %>
+</div>
