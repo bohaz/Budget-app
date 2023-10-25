@@ -4,24 +4,24 @@
 *= require font-awesome
 */
 
-/* Estilos base */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: proxima-nova, sans-serif;
   background-color: #f9f9f9;
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 20% 0;
-  color: #333;
+  color: #434b54;
+  font-family: 'Lobster', sans-serif;
 }
 
-/* Contenedor general */
+/* containers */
 .container,
 .login-container,
-.registration-container {
+.registration-container, .group-container, .category-container, .operation-container, .new-transactio-container, .forgot-container {
   max-width: 400px;
   margin: 0 auto;
 }
@@ -51,24 +51,29 @@ header a {
 
 .forgot-password a,
 .group-link {
-  color: gray;
+  color: #434b54;
   text-decoration: none;
 }
 
-.btn,
-.header-submit,
+.login-btn,
+.header-login, .header-next,
 header a:last-of-type {
   display: flex;
   background: none;
   border: none;
   color: white;
-  font-weight: bold;
+  font-weight: lighter;
   cursor: pointer;
   padding: 0;
   text-decoration: none;
 }
 
-.btn {
+.header-login, .header-next {
+  font-size: 1em;
+  transition: text-decoration 0.3s ease;
+}
+
+.login-btn {
   background-color: #3778c2;
   text-align: center;
   padding: 0.3em 1.5em;
@@ -81,8 +86,7 @@ header a:last-of-type {
 
 form input[type="text"],
 form input[type="email"],
-form input[type="password"],
-.header-submit {
+form input[type="password"] {
   padding: 0.5em;
   border: 1px solid #e6e6e6;
   border-radius: 5px;
@@ -90,22 +94,13 @@ form input[type="password"],
   height: 30px;
 }
 
-.header-submit {
-  font-size: 1em;
-  transition: text-decoration 0.3s ease;
-}
-
 .forgot-password a:hover {
   text-decoration: underline;
 }
 
-.btn:hover,
-.header-submit:hover,
-header a:last-of-type:hover {
+.signup-btn:hover, .login-btn:hover {
   background-color: transparent;
-  border: 2px solid #3778c2;
   color: #3778c2;
-  text-decoration: underline;
 }
 
 /* Header */
@@ -120,6 +115,7 @@ header {
 
 header h2 {
   font-size: 1.4em;
+  font-weight: lighter;
 }
 
 /* Formulario */
@@ -146,17 +142,18 @@ form {
   display: none;
 }
 
+.avatar-icon {
+  margin-left: 1em;
+  color: #434b54;
+}
+
 .avatar-label {
   cursor: pointer;
   padding: 1em;
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
-  color: gray;
-}
-
-.avatar-preview {
-  margin-top: 1%;
+  color: #434b54;
 }
 
 .avatar-image {
@@ -185,17 +182,19 @@ form {
 
 .group-item p {
   margin: 0;
-  color: #333;
+  color: #434b54;
   font-weight: bold;
   font-size: 1.2em;
   margin-left: auto;
 }
 
 /* Botón SCAN */
-.link-category {
-  display: inline-block;
+.link-new-category {
+  display: flex;
   width: 100%;
-  padding: 0.5em 0;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
   background-color: #5fb523;
   color: white;
   text-align: center;
@@ -203,8 +202,61 @@ form {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease-in-out;
+  position: relative;
 }
 
-.link-category:hover {
-  background-color: #4da320;
+.link-new-category::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid white; 
+  border-radius: 3px; 
+}
+
+.add-category {
+  width: 100%; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 1em; 
+}
+
+.total-amount {
+  color: #434b54;
+  background-color: white;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Esto hará que el texto y el monto se separen */
+}
+
+.total-group-amount, .operation-item {
+  color: #434b54;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: white;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  color: #434b54;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 95%;
+}
+.form-group {
+  margin-bottom: 1em;
 }
