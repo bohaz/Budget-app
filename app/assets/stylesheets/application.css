@@ -1,15 +1,200 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* 
+*= require_self
+*= require_tree .
+*= require font-awesome
+*/
+
+/* Estilos base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; 
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 20% 0;
+  color: #333;
+}
+
+/* Contenedor general */
+.container, .login-container, .registration-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 80%;
+}
+
+.btn, .header-submit, header a:last-of-type {
+  display: flex;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #3778c2;
+  text-align: center;
+  padding: 0.3em 1.5em;
+  border-radius: 5px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.btn:hover, .header-submit:hover, header a:last-of-type:hover {
+  background-color: transparent;
+  border: 2px solid #3778c2;
+  color: #3778c2;
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3778c2;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+header h2, header a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+header h2 {
+  font-size: 1.4em;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"], .header-submit {
+  padding: 0.5em;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  font-size: 1em;
+  height: 30px;
+}
+
+.header-submit {
+  font-size: 1em; 
+  transition: text-decoration 0.3s ease;
+}
+
+.forgot-password {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.forgot-password a, .group-link {
+  color: gray;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Avatar */
+.user-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+
+.avatar-upload {
+  display: none;
+}
+
+.avatar-label {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: gray;
+}
+
+.avatar-preview {
+  margin-top: 1%;
+}
+
+.avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+}
+
+/* Grupo */
+.group-item {
+  background-color: white;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.group-item i {
+  font-size: 2em;
+  margin-right: 1em;
+}
+
+.group-item p {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-left: auto;
+}
+
+/* Botón SCAN */
+.link-category {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em 0;
+  background-color: #5fb523;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.link-category:hover {
+  background-color: #4da320;
+}
+
