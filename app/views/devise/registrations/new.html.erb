@@ -1,21 +1,24 @@
 <div class="registration-container">
-  <header>
-  <%= link_to root_path do %>
-    <%= image_tag '', alt: 'Flecha' %> Back
-  <% end %>
-    <h2>REGISTER</h2>
-    <a href="#">Next</a>
-  </header>
-
-  <div class="user-avatar">
-    <%= image_tag "" %>
-    <p>Upload picture</p>
-  </div>
-
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <header>
+      <%= link_to root_path do %>
+        <%= fa_icon "arrow-left" %> 
+      <% end %>
+      <h2>REGISTER</h2>
+      <%= f.submit "Next", class: "header-submit" %>
+    </header>
+
+    <div class="user-avatar">
+      <%= f.file_field :avatar, class: 'avatar-upload' %>
+      <div class="avatar-preview">
+        <%= image_tag "", class: "avatar-image" %>
+      </div>
+      <label for="avatar" class="avatar-label">Upload picture</label>
+      
+    </div>
+    
     <%= f.text_field :name, placeholder: "Full name", autofocus: true %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
-    <%= f.submit "Sign up" %>
   <% end %>
 </div>
