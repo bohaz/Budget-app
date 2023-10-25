@@ -4,7 +4,7 @@
       <%= fa_icon "arrow-left" %> 
     <% end %>
     <h2>LOGIN</h2>
-    <button type="submit" form="login_form" class="header-submit">Log In</button> <!-- Esto es el botón que enviará el formulario -->
+    <button type="submit" form="login_form" class="header-login">Log In</button> 
   </header>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: "login_form" }) do |f| %> <!-- Añade un id al formulario -->
