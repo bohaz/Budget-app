@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<div class="login-container">
+  <header>
+    <h2>Welcome, <%= current_user.name %>!</h2> 
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <i class="fas fa-power-off"></i>
+    <% end %>
+  </header>
+
+  <% @groups.each do |group| %>
+    <%= link_to group_operations_path(group), class: 'group-link' do %>
+      <div class="group-item">
+        <i class="<%= group.icon %>"></i> <%= group.name %>
+        <p>$<%= group.operations.where(author: current_user).sum(:amount) %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= link_to 'SCAN', new_group_path, class: 'link-new-category' %>
+</div>
