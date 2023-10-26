@@ -12,6 +12,6 @@ class User < ApplicationRecord
   private
 
   def name_should_have_at_least_two_words
-    errors.add(:name, "should have at least two words") if name.split.count < 2
-  end
+    errors.add(:name, "should have at least two words") if name && name.split.count < 2
+  end  
 end
