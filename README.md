@@ -20,8 +20,9 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Budget-App <a name="about-project"></a>
+# 💰 TransactTrends <a name="about-project"></a>
 
+TransactTrends is a web application designed to help you manage and keep a detailed track of your financial transactions. Through an intuitive and user-friendly design, you can record operations, assign them to specific categories, and get an overview of your expenses and transactions.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -40,8 +41,19 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **User Management**
+- **User Authentication**
+- **Category Management**
+- **Interactive Dashboards**
+- **Budget Setting**
+- **User-Friendly Interface**
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+ 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link]()
+- [Video presentation]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,7 +112,9 @@ rspec spec
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **User Authentication and Authorization**
+- [ ] **Bill Payment Reminders**
+- [ ] **Automatic Expense Categorization**
+- [ ] **Machine Learning Insights**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -124,13 +138,15 @@ If you like this project let me know with a STAR⭐!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thaks Microverse for giving me the oportunity to build and contribute in projects like this.
+- I would like to thaks Microverse for giving me the oportunity to build and contribute in projects like this.
+
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/bohaz/Budget-app/blob/set-up/MIT.md) licensed.
+This project is [MIT](https://github.com/bohaz/Budget-app/blob/dev/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

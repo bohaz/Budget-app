@@ -2,9 +2,9 @@ class OperationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @group = Group.find(params[:group_id])
+    @group = Group.includes(:operations).find(params[:group_id])
     @operations = @group.operations.where(author: current_user)
-    @groups = Group.joins(:operations).where(operations: { author: current_user }).distinct
+    @groups = Group.includes(:operations).joins(:operations).where(operations: { author: current_user }).distinct
   end
 
   def new
