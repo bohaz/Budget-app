@@ -6,6 +6,7 @@
 
 <div class="group-container">
   <header>
+  <i class="fas fa-bars header-icons"></i>
     <h2>Welcome, <%= current_user.name %>!</h2> 
     <%= link_to destroy_user_session_path, method: :delete do %>
       <i class="fas fa-power-off"></i>
@@ -26,5 +27,5 @@
     <% end %>
   <% end %>
 
-  <%= link_to 'SCAN', new_group_path, class: 'link-new-category' %>
+  <%= link_to 'ADD A NEW CATEGORY', new_group_path, class: 'link-new-category' %>
 </div>
