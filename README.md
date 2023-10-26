@@ -53,7 +53,7 @@ TransactTrends is a web application designed to help you manage and keep a detai
  🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://transacttrends.onrender.com)
-- [Video presentation]()
+- [Video presentation](https://www.loom.com/share/faec2326d00545399580c177ab40a5a8?sid=ddc78867-c15e-4327-ac42-3e4497b012c7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
