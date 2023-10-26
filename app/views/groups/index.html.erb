@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<% total_amount = @groups.sum { |group| group.operations.where(author: current_user).sum(:amount) } %>
+
+<div class="group-container">
+  <header>
+  <i class="fas fa-bars header-icons"></i>
+    <h2>Welcome, <%= current_user.name %>!</h2> 
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <i class="fas fa-power-off"></i>
+    <% end %>
+  </header>
+
+  <div class="total-amount">
+  <span>Total Amount:</span>
+  <span>$<%= total_amount %></span>
+  </div>
+
+  <% @groups.each do |group| %>
+    <%= link_to group_operations_path(group), class: 'group-link' do %>
+      <div class="group-item">
+        <i class="<%= group.icon %>"></i> <%= group.name %>
+        <p>$<%= group.operations.where(author: current_user).sum(:amount) %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= link_to 'ADD A NEW CATEGORY', new_group_path, class: 'link-new-category' %>
+</div>

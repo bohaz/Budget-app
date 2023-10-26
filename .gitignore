@@ -28,4 +28,6 @@
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
+
+node_modules/
 /config/master.key

@@ -1,0 +1,23 @@
+<div class="operation-container">
+  <header>
+    <%= link_to groups_path do %>
+      <%= fa_icon "arrow-left" %> 
+    <% end %>
+    <h2>Operations for <%= @group.name %></h2>
+    <%= fa_icon "search", class: "header-icons" %>
+   </header> 
+
+  <div class="total-group-amount">
+    <span>Total Amount for <%= @group.name %> :</span>
+    <span>$<%= @operations.sum(&:amount) %></span>
+  </div>
+
+  <% @operations.order(created_at: :desc).each do |operation| %>
+    <div class="operation-item">
+      <span><%= operation.name %></span> <!-- Esta línea muestra el nombre de la operación -->
+      <span>$<%= operation.amount %></span>
+    </div>
+  <% end %>  
+
+  <%= link_to 'ADD A NEW TRANSACTION', new_group_operation_path(@group), class: 'link-new-category' %>
+</div>

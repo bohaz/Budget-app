@@ -1,0 +1,33 @@
+<div class="registration-container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <header>
+      <%= link_to root_path do %>
+        <%= fa_icon "arrow-left" %> 
+      <% end %>
+      <h2>REGISTER</h2>
+      <%= f.submit "Next", class: "header-next" %>
+    </header>
+
+    <div class="user-avatar">
+      <%= f.file_field :avatar, class: 'avatar-upload', id: 'avatar' %>
+      <div class="avatar-preview">
+        <%= fa_icon "user", class: "avatar-icon" %> 
+      </div>
+      <label for="avatar" class="avatar-label">Upload picture</label>
+    </div>
+    
+    <%= f.text_field :name, placeholder: "Full name", autofocus: true %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+  <% end %>
+
+  <% if resource.errors.any? %>
+  <div class="error-messages">
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
