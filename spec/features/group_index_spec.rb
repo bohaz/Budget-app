@@ -34,6 +34,6 @@ RSpec.feature "Group's index page", type: :feature do
   end
 
   scenario 'has a link to create a new group' do
-    expect(page).to have_link('SCAN', href: new_group_path)
+    expect(page).to have_link('ADD A NEW CATEGORY', href: new_group_path)
   end
 end

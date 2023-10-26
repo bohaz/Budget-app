@@ -20,4 +20,14 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
   <% end %>
+
+  <% if resource.errors.any? %>
+  <div class="error-messages">
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 </div>

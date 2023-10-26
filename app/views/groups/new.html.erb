@@ -6,7 +6,9 @@
 <%= link_to groups_path do %>
   <%= fa_icon "arrow-left" %> 
 <% end %>
-<h2 class="category-title">Add a new category</h2>
+<h2>Add a new category</h2>
+<%= fa_icon "search", class: "header-icons" %>
+
 </header>
 
 <%= form_for(@group) do |f| %>
