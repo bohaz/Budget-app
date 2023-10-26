@@ -13,10 +13,10 @@
 
   <% @operations.order(created_at: :desc).each do |operation| %>
     <div class="operation-item">
-      <span>Amount:</span>
+      <span><%= operation.name %></span> <!-- Esta línea muestra el nombre de la operación -->
       <span>$<%= operation.amount %></span>
     </div>
-  <% end %>
+  <% end %>  
 
   <%= link_to 'ADD A NEW TRANSACTION', new_group_operation_path(@group), class: 'link-new-category' %>
 </div>
